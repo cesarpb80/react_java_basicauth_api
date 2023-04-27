@@ -14,9 +14,8 @@ export default function TodoComponent () {
     const [targetDate, setTargetDate] = useState("");
     const navigate = useNavigate();
 
-    function getTodo() {
-
-        if(id !== -1) {
+    function getTodo() {        
+        if(parseInt(id) !== -1) {
             todoApiService.getTodo(username, id).then(response => {         
                 setDescription(response.data.description)
                 setTargetDate(response.data.targetDate)
